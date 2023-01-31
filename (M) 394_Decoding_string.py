@@ -8,24 +8,48 @@
 
 # 输入"abc3[cd]xyz”，解压结果为"abccdcdcdxyz"
 
-def contract(strs):
-    stores = []
 
-    for i in range(len(strs)):
-        if strs[i] == "[":
-            stores.append(i)
-        if strs[i] == "]":
-            stores.append(i)
+# def contract(strs):
+#     stores = []
 
-    mid = round(len(stores)/2) -1
+#     for i in range(len(strs)):
+#         if strs[i] == "[":
+#             stores.append(i)
+#         if strs[i] == "]":
+#             stores.append(i)
 
-    midcol = stores[mid]
-    midend = stores[mid+1]
-    multi = strs[midcol-1]
-    result = int(multi) * strs[midcol:midend+1]
-    strs[midcol-1:midend+1] = []
-    strs[midcol-1:midend+1] = result
-    if stores != []:
-        return contract(strs)
+#     mid = round(len(stores) / 2) - 1
 
-contract("3[a2[c]]")
+#     midcol = stores[mid]
+#     midend = stores[mid + 1]
+#     multi = strs[midcol - 1]
+#     result = int(multi) * strs[midcol : midend + 1]
+#     # strs[midcol-1:midend+1] = []
+#     strs[midcol - 1 : midend + 1] = result
+#     if stores != []:
+#         return contract(strs)
+# contract("3[a2[c]]")
+
+
+def decodeString(s: str):
+    stack = []
+    curNum = 0
+    curString = ""
+    for c in s:
+        if c == "[":
+            stack.append(curString)
+            stack.append(curNum)
+            curString = ""
+            curNum = 0
+        elif c == "]":
+            num = stack.pop()
+            prevString = stack.pop()
+            curString = prevString + num * curString
+        elif c.isdigit():
+            curNum = curNum * 10 + int(c)
+        else:
+            curString += c
+    return curString
+
+
+print(decodeString("3[a2[c]]"))
