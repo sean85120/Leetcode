@@ -1,4 +1,5 @@
 # Leetcode
+*this repo is a combination of Blind75 solutions*
 
 ## Blind 75
 
