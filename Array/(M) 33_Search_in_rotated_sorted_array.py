@@ -1,6 +1,8 @@
+from typing import List
+
+
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-
         l, r = 0, len(nums) - 1
 
         while l <= r:
@@ -10,7 +12,6 @@ class Solution:
                 return mid
 
             if nums[l] <= nums[mid]:
-
                 if nums[l] <= target < nums[mid]:
                     r = mid - 1
                 else:
@@ -20,6 +21,6 @@ class Solution:
                 if nums[mid] < target <= nums[r]:
                     l = mid + 1
                 else:
-                    r = mid -1
+                    r = mid - 1
 
         return -1
