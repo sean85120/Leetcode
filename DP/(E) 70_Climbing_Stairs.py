@@ -47,7 +47,6 @@ class Solution2(object):
 
 class Solution3(object):
     def climbStairs(self, n):
-
         # add edge cases
         if n == 0:
             return 0
