@@ -26,7 +26,7 @@ class Solution2(object):
         :type n: int
         :rtype: int
         """
-        memo = {}
+        memo = dict()
         memo[1] = 1
         memo[2] = 2
 

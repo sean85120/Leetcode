@@ -12,7 +12,7 @@ https://leetcode.com/discuss/general-discussion/460599/Blind-75-LeetCode-Questio
 - [x] Product of Array Except Self
 - [x] Maximum Subarray
 - [x] Maximum Product Subarray
-- [ ] Find Minimum in Rotated Sorted Array
+- [x] Find Minimum in Rotated Sorted Array
 - [x] Search in Rotated Sorted Array
 - [x] 3 Sum
 - [x] Container With Most Water
